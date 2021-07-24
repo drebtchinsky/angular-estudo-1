@@ -1,0 +1,17 @@
+header {
+  background-color: var(--primary);
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+  .ativo{
+    display: none;
+  }
+}
+main{
+  padding: var(--padding);
+}

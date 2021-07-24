@@ -1,0 +1,24 @@
+<section class="container">
+  <h2 class="title">Transferencias</h2>
+  <table class="table" aria-label="Extrato de transferencias bytebank">
+    <thead class="table-head">
+      <tr>
+        <th class="table-head-content" scope="col">Data</th>
+        <th class="table-head-content" scope="col">Valor</th>
+        <th class="table-head-content" scope="col">Destino</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="showTable(); else listaVazia">
+      <tr class="table-line" *ngFor="let transferencia of transferencias">
+        <td class="table-content">{{transferencia?.data | date:'short'}}</td>
+        <td class="table-content">{{transferencia?.valor | currency}}</td>
+        <td class="table-content">{{transferencia?.destino}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<ng-template #listaVazia>
+  <p>Nenhuma operação cadastrada</p>
+</ng-template>
+
